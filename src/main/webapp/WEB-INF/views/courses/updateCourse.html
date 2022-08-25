@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"   xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Course</title>
+</head>
+<body>
+<div class="center">
+    <form
+            action="#"
+            th:action="@{/saveUpdateCourse}"
+            th:object="${course}"
+            method="post">
+        <div class="form-group">
+            <input type="hidden" name="id" th:field="*{id}">
+
+        </div>
+        <div class="form-group" >
+            <input type="text" name="courseName" th:field="*{courseName}" placeholder="Course Name">
+            <br><br>
+            <input type="text" name="DateOfStart" th:field="*{dateOfStart}" placeholder="Starting date">
+            <br><br>
+            <input type="text" name="Duration" th:field="*{durationMonth}" placeholder="Duration">
+            <br><br>
+            <input type="text" name="Image" th:field="*{image}" placeholder="Image">
+            <br><br>
+            <input type="text" name="Description" th:field="*{description}" placeholder="Description">
+            <br><br>
+
+        </div>
+        <button type="submit" class="btn btn-primary" value="update">Submit</button>
+    </form>
+</div>
+</body>
+</html>
